@@ -7,7 +7,7 @@ pkgdesc='Bluetooth support for Raspberry Pi devices'
 conflicts=('pi-bluetooth' 'bluetooth-raspberry')
 arch=('armv6h' 'armv7h' 'aarch64')
 license=('GPL')
-url='https://wiki.archlinux.org/index.php/bluetooth'
+url='http://wiki.archlinux.org/index.php/bluetooth'
 #depends=('firmware-raspberrypi>=4' 'linux-raspberrypi>=4.14.59')
 source=('90-pi-bluetooth.rules'
         '99-serial.rules'
@@ -21,7 +21,6 @@ sha256sums=('087A87B75BD26993588FE7FB050B7440DC7427C889C977A07B3B76F11E5538D8'
 package() {
   install -Dm644 ../90-pi-bluetooth.rules "${pkgdir}/lib/udev/rules.d/90-pi-bluetooth.rules"
   install -Dm644 ../99-serial.rules "${pkgdir}/etc/udev/rules.d/99-serial.rules"
-  install -Dm644 ../btuart.sh "${pkgdir}/usr/bin/btuart.sh"
+  install -Dm755 ../btuart.sh "${pkgdir}/usr/bin/btuart.sh"
   install -Dm644 ../hciuart.service "${pkgdir}/lib/systemd/system/hciuart.service"
-  chmod +x ${pkgdir}/usr/bin/btuart.sh
 }
