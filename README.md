@@ -13,4 +13,8 @@ makepkg -si
 
 sudo reboot
 
+sudo systemctl start hciuart
+
+sudo systemctl enable hciuart
+
 Now You're ready to install bluez and bluez-utils and start using Bluetooth on Your device
