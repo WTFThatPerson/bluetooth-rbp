@@ -11,4 +11,6 @@ cd bluetooth-rbp
 
 makepkg -si
 
+sudo reboot
+
 Now You're ready to install bluez and bluez-utils and start using Bluetooth on Your device
