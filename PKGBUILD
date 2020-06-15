@@ -11,7 +11,7 @@ url='http://wiki.archlinux.org/index.php/bluetooth'
 #depends=('firmware-raspberrypi>=4' 'linux-raspberrypi>=4.14.59')
 source=('90-pi-bluetooth.rules'
         '99-serial.rules'
-        'btuart.sh'
+        'btuart'
         'hciuart.service')
 sha256sums=('087A87B75BD26993588FE7FB050B7440DC7427C889C977A07B3B76F11E5538D8'
             'B6677826060A3AE66C6EDB1211C04942FB2A20F7348F49B960F1B7B8B2A73B47'
@@ -21,6 +21,6 @@ sha256sums=('087A87B75BD26993588FE7FB050B7440DC7427C889C977A07B3B76F11E5538D8'
 package() {
   install -Dm644 ../90-pi-bluetooth.rules "${pkgdir}/lib/udev/rules.d/90-pi-bluetooth.rules"
   install -Dm644 ../99-serial.rules "${pkgdir}/etc/udev/rules.d/99-serial.rules"
-  install -Dm755 ../btuart.sh "${pkgdir}/usr/bin/btuart.sh"
+  install -Dm755 ../btuart "${pkgdir}/usr/bin/btuart"
   install -Dm644 ../hciuart.service "${pkgdir}/lib/systemd/system/hciuart.service"
 }
