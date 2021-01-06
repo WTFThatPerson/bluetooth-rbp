@@ -19,8 +19,8 @@ sha256sums=('087A87B75BD26993588FE7FB050B7440DC7427C889C977A07B3B76F11E5538D8'
             '704483A9534FA1BF84C7081A4846FA6D0300DC1968FDC3651FF2A123AAA9A11C')
 
 package() {
-  install -Dm644 ../90-pi-bluetooth.rules "${pkgdir}/lib/udev/rules.d/90-pi-bluetooth.rules"
+  install -Dm644 ../90-pi-bluetooth.rules "${pkgdir}/usr/lib/udev/rules.d/90-pi-bluetooth.rules"
   install -Dm644 ../99-serial.rules "${pkgdir}/etc/udev/rules.d/99-serial.rules"
   install -Dm755 ../btuart "${pkgdir}/usr/bin/btuart"
-  install -Dm644 ../hciuart.service "${pkgdir}/lib/systemd/system/hciuart.service"
+  install -Dm644 ../hciuart.service "${pkgdir}/usr/lib/systemd/system/hciuart.service"
 }
