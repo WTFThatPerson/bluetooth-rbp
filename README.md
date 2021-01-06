@@ -24,4 +24,4 @@ just put
 
 dtparam=krnbt=on
 
-in /boot/config and install bluez and bluez-utils is enough now
+in /boot/config.txt and install bluez and bluez-utils is enough now
