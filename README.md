@@ -19,4 +19,9 @@ sudo systemctl enable hciuart
 
 Now You're ready to install bluez and bluez-utils and start using Bluetooth on Your device
 
-Please keep in mind, since kernel 5.4.50 this isn't needed anymore neither on Pi3 nor Pi4 because of native support of Bluetooth
+Please keep in mind, since kernel 5.4.50 this isn't needed anymore neither on Pi3 nor Pi4 because of native support of Bluetooth:
+just put 
+
+dtparam=krnbt=on
+
+in /boot/config and install bluez and bluez-utils is enough now
